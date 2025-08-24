@@ -19,15 +19,14 @@ def get_pokemon():
         height = data['height']
         weight_label.config(text=weight)
         height_label.config(text=height)
-
-        
         img_response = requests.get(img_url)
         img_data = Image.open(BytesIO(img_response.content))
         img_data = img_data.resize((500, 500))  
         img_tk = ImageTk.PhotoImage(img_data)
         img_label.config(image=img_tk)
         img_label.image = img_tk  
-
+    else:
+        name_label.config(text="Error")
 
 root = tk.Tk()
 root.title("Pokémon thing")
@@ -60,3 +59,4 @@ button = Button(root, text="Get Pokémon", command=get_pokemon,font=("Arial", 10
 button.pack(pady=10)
 
 root.mainloop()
+
