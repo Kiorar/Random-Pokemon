@@ -17,5 +17,7 @@ def get_pokemon():
         print("Image URL:",img_url)
         print("Weight(hg):",weight)
         print("Height(dm)",height)
+    else:
+        print("error")
 
 get_pokemon()
